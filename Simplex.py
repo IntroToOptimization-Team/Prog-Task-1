@@ -13,7 +13,7 @@ def simplex(C, A, b, eps=0.001):
 
     print("subject to the constraints:")
     for row in range(len(b)):
-        print(' + '.join([f'{A[row][i]} * x{i + 1}' for i in range(len(A[row]))]) + ' <= ' + str(b[row]))
+        print(' + '.join([f'{A[row][i]} * x{i + 1}' for i in range(len(A[row]))]).replace("+ -", "- ") + ' <= ' + str(b[row]))
     print()
 
     # Step 2. Initialize
